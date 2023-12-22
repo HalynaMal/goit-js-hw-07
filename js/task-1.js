@@ -1,3 +1,4 @@
 const liElements = document.querySelectorAll('li.item');
 const itemCount = liElements.length;
-console.log(itemCount);
+console.log('Number of categories: ' + itemCount);
+
