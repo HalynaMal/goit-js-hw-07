@@ -28,40 +28,15 @@ const images = [
   },
 ];
 
- const boxElem = document.querySelector('.gallery');
- const result = images.map(image => {
-    const liElem = document.createElement('li');
+const galleryList = document.querySelector('.gallery');
 
-    //liElem.classList.add('gallery-item');
-    const imgElem = document.createElement('img');
+function galleryTemp(img) {
+  return `<li><img src=${img.url} alt="${img.alt}"></li>`;
+}
 
-     imgElem.src = image.url;
-     
-     boxElem.appendChild(liElem);
-     liElem.appendChild(imgElem);
-          
-      return imgElem;
-});
+function renderGallery() {
+  const markup = images.map(galleryTemp).join('');
+  galleryList.insertAdjacentHTML('beforeend', markup);
+}
 
-boxElem.append(...result);
-
-
-// const galleryList = document.querySelector('.gallery');
-
-// function createGallery(imagesArray) {
-//   const galleryItems = [];
-  
-//   imagesArray.forEach(image => {
-//     const listItem = document.createElement('li');
-//     listItem.classList.add('gallery-item');
-//     const imageElement = document.createElement('img');
-//     imageElement.src = image.url;
-//     imageElement.alt = image.alt;
-//     listItem.appendChild(imageElement);
-//     galleryItems.push(listItem);
-//   });
-  
-//   galleryList.append(...galleryItems);
-// }
-
-// createGallery(images);
+renderGallery();
