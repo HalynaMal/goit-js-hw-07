@@ -8,7 +8,6 @@ const input = document.querySelector('input');
 const createButton = document.querySelector('[data-create]');
 const destroyButton = document.querySelector('[data-destroy]');
 const boxesContainer = document.querySelector('#boxes');
-const errorContainer = document.querySelector('.error-message');
 
 createButton.addEventListener('click', () => createBoxes(Number(input.value)));
 destroyButton.addEventListener('click', destroyBoxes);
